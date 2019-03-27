@@ -33,7 +33,7 @@ You will create a simple master-detail layout in the "Main.storyboard".
 
 #### NSString Category
 
-1. Create a new *Objective-C file* in "File > New File > Objective-C...". Set its name to "WordCount". For the "File Type" select "Category". For the "Class", choose `NSString`
+1. Create a new *Objective-C file* in "File > New File > Objective-C File". Set its name to "WordCount". For the "File Type" select "Category". For the "Class", choose `NSString`
 2. Add an instance method called `wordCount` that returns an `int` to the category. In the implementation, this should simply return the amount of words in the string.
 
 #### Model
