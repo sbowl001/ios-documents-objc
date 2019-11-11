@@ -8,10 +8,17 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+ 
 
 @interface IIIDocument : NSObject
+//Add properties with the appropriate types and property attributes for a document's title, text, and word count.
 
+- (instancetype)initWithTitle: (NSString *)title text:(NSString *)text;
+ 
+
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) NSUInteger wordCount;
 @end
 
-NS_ASSUME_NONNULL_END
+ 

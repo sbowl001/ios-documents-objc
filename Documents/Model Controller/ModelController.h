@@ -8,10 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class IIIDocument;
 
 @interface ModelController : NSObject
 
+@property (nonatomic, readonly, copy) NSArray<IIIDocument *> *documents;
+
+-(void)addDocument:(IIIDocument *)aDocument;
+-(void)removeDocument:(IIIDocument *)aDocument;
+-(void)updateDocument:(IIIDocument *)aDocument;
+
 @end
 
-NS_ASSUME_NONNULL_END
+ 
