@@ -15,6 +15,9 @@
 		A33A03E02378FBC6003E09B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03DF2378FBC6003E09B1 /* main.m */; };
 		A33A03EA2378FE7C003E09B1 /* DocumentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03E92378FE7C003E09B1 /* DocumentsTableViewController.m */; };
 		A33A03ED2378FE97003E09B1 /* DocumentAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */; };
+		A33A03F12379016A003E09B1 /* NSString+WordCount.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03F02379016A003E09B1 /* NSString+WordCount.m */; };
+		A33A03F4237901D4003E09B1 /* IIIDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03F3237901D4003E09B1 /* IIIDocument.m */; };
+		A33A03F82379024E003E09B1 /* ModelController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03F72379024E003E09B1 /* ModelController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,12 @@
 		A33A03E92378FE7C003E09B1 /* DocumentsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentsTableViewController.m; sourceTree = "<group>"; };
 		A33A03EB2378FE97003E09B1 /* DocumentAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentAddViewController.h; sourceTree = "<group>"; };
 		A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentAddViewController.m; sourceTree = "<group>"; };
+		A33A03EF2379016A003E09B1 /* NSString+WordCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "NSString+WordCount.h"; path = "Model/NSString+WordCount.h"; sourceTree = "<group>"; };
+		A33A03F02379016A003E09B1 /* NSString+WordCount.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "NSString+WordCount.m"; path = "Model/NSString+WordCount.m"; sourceTree = "<group>"; };
+		A33A03F2237901D4003E09B1 /* IIIDocument.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IIIDocument.h; sourceTree = "<group>"; };
+		A33A03F3237901D4003E09B1 /* IIIDocument.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IIIDocument.m; sourceTree = "<group>"; };
+		A33A03F62379024E003E09B1 /* ModelController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModelController.h; sourceTree = "<group>"; };
+		A33A03F72379024E003E09B1 /* ModelController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ModelController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,9 +73,13 @@
 		A33A03CC2378FBC4003E09B1 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				A33A03F523790233003E09B1 /* Model Controller */,
+				A33A03EE23790109003E09B1 /* Model */,
 				A33A03E72378FE46003E09B1 /* View Controllers */,
 				A33A03E62378FE1D003E09B1 /* Resources */,
 				A33A03D62378FBC4003E09B1 /* Main.storyboard */,
+				A33A03EF2379016A003E09B1 /* NSString+WordCount.h */,
+				A33A03F02379016A003E09B1 /* NSString+WordCount.m */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
@@ -95,6 +108,24 @@
 				A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */,
 			);
 			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A33A03EE23790109003E09B1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A33A03F2237901D4003E09B1 /* IIIDocument.h */,
+				A33A03F3237901D4003E09B1 /* IIIDocument.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A33A03F523790233003E09B1 /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A33A03F62379024E003E09B1 /* ModelController.h */,
+				A33A03F72379024E003E09B1 /* ModelController.m */,
+			);
+			path = "Model Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,8 +199,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A33A03CF2378FBC4003E09B1 /* AppDelegate.m in Sources */,
+				A33A03F82379024E003E09B1 /* ModelController.m in Sources */,
+				A33A03F4237901D4003E09B1 /* IIIDocument.m in Sources */,
 				A33A03E02378FBC6003E09B1 /* main.m in Sources */,
 				A33A03EA2378FE7C003E09B1 /* DocumentsTableViewController.m in Sources */,
+				A33A03F12379016A003E09B1 /* NSString+WordCount.m in Sources */,
 				A33A03ED2378FE97003E09B1 /* DocumentAddViewController.m in Sources */,
 				A33A03D22378FBC4003E09B1 /* SceneDelegate.m in Sources */,
 			);
