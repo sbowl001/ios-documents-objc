@@ -10,13 +10,13 @@
         <!--Documents-->
         <scene sceneID="xH0-8D-qiL">
             <objects>
-                <tableViewController id="t8c-iD-vVQ" sceneMemberID="viewController">
+                <tableViewController id="t8c-iD-vVQ" customClass="DocumentsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ueh-tS-N6K">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="1hn-kf-vw0" detailTextLabel="idd-zb-pgY" style="IBUITableViewCellStyleSubtitle" id="2hs-Cj-00Y">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DocumentCell" textLabel="1hn-kf-vw0" detailTextLabel="idd-zb-pgY" style="IBUITableViewCellStyleSubtitle" id="2hs-Cj-00Y">
                                 <rect key="frame" x="0.0" y="28" width="414" height="55.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2hs-Cj-00Y" id="Ogf-r5-EHv">
@@ -49,6 +49,7 @@
                     <navigationItem key="navigationItem" title="Documents" largeTitleDisplayMode="always" id="s0P-sF-1Sz">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="6du-Wb-wRG">
                             <connections>
+                                <action selector="addDocumentButtonTapped:" destination="t8c-iD-vVQ" id="3xv-Tu-muv"/>
                                 <segue destination="cSD-PV-DVR" kind="show" identifier="toAddDetail" id="n2o-UI-bO5"/>
                             </connections>
                         </barButtonItem>
@@ -58,10 +59,10 @@
             </objects>
             <point key="canvasLocation" x="986.95652173913049" y="113.83928571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Document Add View Controller-->
         <scene sceneID="pE9-tc-QxC">
             <objects>
-                <viewController id="cSD-PV-DVR" sceneMemberID="viewController">
+                <viewController id="cSD-PV-DVR" customClass="DocumentAddViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yMB-no-wsg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -110,8 +111,17 @@
                         <viewLayoutGuide key="safeArea" id="fWu-qH-1Mr"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Zr-P2-UMD">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="3x8-PB-xjR"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="save" id="3x8-PB-xjR">
+                            <connections>
+                                <action selector="saveDocumentButton:" destination="cSD-PV-DVR" id="2WD-Lq-k9m"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="entryTextView" destination="dvA-cj-JSO" id="5Ic-iw-xTz"/>
+                        <outlet property="titleTextField" destination="fFa-jc-1r3" id="BEh-Md-mz0"/>
+                        <outlet property="wordsLabel" destination="waA-UE-7yw" id="kDa-sQ-eGV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fgF-dJ-yel" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

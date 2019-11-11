@@ -13,6 +13,8 @@
 		A33A03DA2378FBC6003E09B1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A33A03D92378FBC6003E09B1 /* Assets.xcassets */; };
 		A33A03DD2378FBC6003E09B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A33A03DB2378FBC6003E09B1 /* LaunchScreen.storyboard */; };
 		A33A03E02378FBC6003E09B1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03DF2378FBC6003E09B1 /* main.m */; };
+		A33A03EA2378FE7C003E09B1 /* DocumentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03E92378FE7C003E09B1 /* DocumentsTableViewController.m */; };
+		A33A03ED2378FE97003E09B1 /* DocumentAddViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		A33A03DC2378FBC6003E09B1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A33A03DE2378FBC6003E09B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A33A03DF2378FBC6003E09B1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A33A03E82378FE7C003E09B1 /* DocumentsTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentsTableViewController.h; sourceTree = "<group>"; };
+		A33A03E92378FE7C003E09B1 /* DocumentsTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentsTableViewController.m; sourceTree = "<group>"; };
+		A33A03EB2378FE97003E09B1 /* DocumentAddViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DocumentAddViewController.h; sourceTree = "<group>"; };
+		A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DocumentAddViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,17 +64,37 @@
 		A33A03CC2378FBC4003E09B1 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				A33A03E72378FE46003E09B1 /* View Controllers */,
+				A33A03E62378FE1D003E09B1 /* Resources */,
+				A33A03D62378FBC4003E09B1 /* Main.storyboard */,
+			);
+			path = Documents;
+			sourceTree = "<group>";
+		};
+		A33A03E62378FE1D003E09B1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				A33A03CD2378FBC4003E09B1 /* AppDelegate.h */,
 				A33A03CE2378FBC4003E09B1 /* AppDelegate.m */,
 				A33A03D02378FBC4003E09B1 /* SceneDelegate.h */,
 				A33A03D12378FBC4003E09B1 /* SceneDelegate.m */,
-				A33A03D62378FBC4003E09B1 /* Main.storyboard */,
 				A33A03D92378FBC6003E09B1 /* Assets.xcassets */,
 				A33A03DB2378FBC6003E09B1 /* LaunchScreen.storyboard */,
 				A33A03DE2378FBC6003E09B1 /* Info.plist */,
 				A33A03DF2378FBC6003E09B1 /* main.m */,
 			);
-			path = Documents;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A33A03E72378FE46003E09B1 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A33A03E82378FE7C003E09B1 /* DocumentsTableViewController.h */,
+				A33A03E92378FE7C003E09B1 /* DocumentsTableViewController.m */,
+				A33A03EB2378FE97003E09B1 /* DocumentAddViewController.h */,
+				A33A03EC2378FE97003E09B1 /* DocumentAddViewController.m */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +169,8 @@
 			files = (
 				A33A03CF2378FBC4003E09B1 /* AppDelegate.m in Sources */,
 				A33A03E02378FBC6003E09B1 /* main.m in Sources */,
+				A33A03EA2378FE7C003E09B1 /* DocumentsTableViewController.m in Sources */,
+				A33A03ED2378FE97003E09B1 /* DocumentAddViewController.m in Sources */,
 				A33A03D22378FBC4003E09B1 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
