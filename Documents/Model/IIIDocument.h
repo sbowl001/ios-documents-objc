@@ -18,7 +18,7 @@
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSString *text;
-@property (nonatomic) NSUInteger wordCount;
+@property (nonatomic) NSUInteger *wordCount;
 @end
 
  

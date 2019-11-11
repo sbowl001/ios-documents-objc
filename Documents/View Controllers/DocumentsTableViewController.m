@@ -7,9 +7,16 @@
 //
 
 #import "DocumentsTableViewController.h"
+#import "DocumentAddViewController.h"
+#import "ModelController.h"
+#import "IIIDocument.h"
+
+#import "NSString+WordCount.h"
 
 @interface DocumentsTableViewController ()
-
+//Add a property with property attributes for an instance of your model controller in the table view controller subclass.
+@property (nonatomic, readonly) ModelController *modelController;
+//In the two initializers of the table view controller, instantiate the model controller property.
 @end
 
 @implementation DocumentsTableViewController
@@ -17,79 +24,69 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+   
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.tableView reloadData];
+}
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
+ 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return self.modelController.documents.count;
+  
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{ UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DocumentCell"  forIndexPath:indexPath];
+    
+    IIIDocument *document = [self.modelController.documents objectAtIndex:indexPath.row];
+    cell.textLabel.text = document.title;
+    cell.detailTextLabel.text = [NSString stringWithFormat:@"%ld words", (long)document.text.wordCount];
+    return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
+        IIIDocument *document = [self.modelController.documents objectAtIndex:indexPath.row];
+        [self.modelController removeDocument:document];
+        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        
+    }
 }
 - (IBAction)addDocumentButtonTapped:(id)sender {
 }
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
+ @synthesize modelController = _modelController;
+ - (ModelController *)modelController
+ {
+     if(!_modelController){
+         _modelController = [[ModelController alloc] init];
+     }
+     return _modelController;
+ }  //this is a lazy property - How to use it?
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
+ 
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+ 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+     if ([segue.identifier isEqualToString:@"editDocument"]) {
+            NSIndexPath *indexPath = self.tableView.indexPathForSelectedRow;
+            DocumentAddViewController *detailVC = segue.destinationViewController;
+            
+         detailVC.modelController = self.modelController;
+            detailVC.document = [self.modelController.documents objectAtIndex:indexPath.row];
+        } else if ([segue.identifier isEqualToString:@"toAddDetail"]) {
+            DocumentAddViewController *detailVC = segue.destinationViewController;
+            detailVC.modelController = self.modelController;
+        }
 }
-*/
+ 
 
 @end

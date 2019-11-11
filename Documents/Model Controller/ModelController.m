@@ -35,10 +35,14 @@
 {
     [self.internalDocuments removeObject:aDocument];
 }
--(void)updateDocument:(IIIDocument *)aDocument
-{
-    [self.internalDocuments addObject:aDocument];
+ 
+- (void)updateDocument:(IIIDocument *)document withTitle:(NSString *)title andText:(NSString *)text
+    {
+       document.title = title;
+       document.text = text;
+       
 }
+ 
 
 -(NSArray<IIIDocument *> *)documents
 {

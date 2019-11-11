@@ -39,6 +39,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="cSD-PV-DVR" kind="show" identifier="editDocument" id="PGu-8j-fGV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,4 +149,7 @@
             <point key="canvasLocation" x="76.811594202898561" y="113.83928571428571"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="n2o-UI-bO5"/>
+    </inferredMetricsTieBreakers>
 </document>
