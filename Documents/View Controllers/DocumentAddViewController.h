@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-NS_ASSUME_NONNULL_BEGIN
+@class ModelController;
+@class IIIDocument;
 
-@interface DocumentAddViewController : UIViewController
+@interface DocumentAddViewController : UIViewController <UITextViewDelegate>
+
+ 
+@property (nonatomic) ModelController *modelController;
+@property (nonatomic) IIIDocument *document;
 
 @end
 
-NS_ASSUME_NONNULL_END
+ 
+//In the detail view controller, adopt the UITextViewDelegate protocol. Set the view controller as the delegate of the text view.

@@ -77,6 +77,7 @@
 				A33A03EE23790109003E09B1 /* Model */,
 				A33A03E72378FE46003E09B1 /* View Controllers */,
 				A33A03E62378FE1D003E09B1 /* Resources */,
+				A33A03DE2378FBC6003E09B1 /* Info.plist */,
 				A33A03D62378FBC4003E09B1 /* Main.storyboard */,
 				A33A03EF2379016A003E09B1 /* NSString+WordCount.h */,
 				A33A03F02379016A003E09B1 /* NSString+WordCount.m */,
@@ -93,7 +94,6 @@
 				A33A03D12378FBC4003E09B1 /* SceneDelegate.m */,
 				A33A03D92378FBC6003E09B1 /* Assets.xcassets */,
 				A33A03DB2378FBC6003E09B1 /* LaunchScreen.storyboard */,
-				A33A03DE2378FBC6003E09B1 /* Info.plist */,
 				A33A03DF2378FBC6003E09B1 /* main.m */,
 			);
 			path = Resources;
@@ -346,6 +346,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Documents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -362,6 +363,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Documents/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

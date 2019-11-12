@@ -7,8 +7,11 @@
 //
 
 #import "DocumentAddViewController.h"
+#import "IIIDocument.h"
+#import "ModelController.h"
 #import <UIKit/UIKit.h>
 
+#import "NSString+WordCount.h" 
 @interface DocumentAddViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *wordsLabel;
 @property (weak, nonatomic) IBOutlet UITextField *titleTextField;
@@ -20,19 +23,38 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    [self.entryTextView setDelegate:self];
+    [self updateViews];
 }
 - (IBAction)saveDocumentButton:(id)sender {
+    
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void)textViewDidChange:(UITextView *)textView
+{
+    self.wordsLabel.text = [NSString stringWithFormat:@"%lu words", self.entryTextView.text.wordCount];
 }
-*/
+
+-(void)updateViews
+{
+    self.title = self.document.title ?: @"New Document";
+    if(!self.isViewLoaded || !self.document) {return;}
+    
+    self.titleTextField.text = self.document.title;
+    self.entryTextView.text = self.document.text;
+    self.wordsLabel.text = [NSString stringWithFormat:@"%lu words", self.entryTextView.text.wordCount];
+}
+
+-(void)setDocument:(IIIDocument *)document
+{
+    if (_document != document){
+        _document = document;
+        [self updateViews];
+    }
+}
+ 
+//Implement the textViewDidChange method. This will get called every time the user enters a character on the keyboard while the text view is the first responder. In the method, update the label's text to show how many words are in the textView's text. Use the wordCount method from the NSString+WordCount category to do this.
+//Create an updateViews method that should place the document's properties in the appropriate UI elements for the user to see.
+//When the user wants to save the document, either create a new document or update an existing one.
 
 @end
