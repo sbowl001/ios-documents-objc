@@ -27,7 +27,17 @@
     [self updateViews];
 }
 - (IBAction)saveDocumentButton:(id)sender {
+    BOOL isNewDocument = (self.document == nil);
     
+    if (isNewDocument){
+        IIIDocument *document = [[IIIDocument alloc] initWithTitle:self.titleTextField.text text:self.entryTextView.text];
+        [self.modelController addDocument:document];
+    } else {
+        self.document.title = self.titleTextField.text;
+        self.document.text = self.entryTextView.text;
+    }
+    
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)textViewDidChange:(UITextView *)textView

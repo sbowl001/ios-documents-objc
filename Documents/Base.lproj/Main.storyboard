@@ -70,7 +70,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="qLD-wc-Zsa">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="45" translatesAutoresizingMaskIntoConstraints="NO" id="qLD-wc-Zsa">
                                 <rect key="frame" x="32" y="209" width="350" height="235"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFa-jc-1r3">
@@ -93,7 +93,7 @@
                                     </textView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waA-UE-7yw">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="waA-UE-7yw">
                                 <rect key="frame" x="32" y="137" width="350" height="51"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="oEn-Bz-uwz"/>
@@ -106,10 +106,11 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="waA-UE-7yw" firstAttribute="leading" secondItem="fWu-qH-1Mr" secondAttribute="leading" constant="32" id="7FK-ET-LP2"/>
-                            <constraint firstItem="waA-UE-7yw" firstAttribute="centerX" secondItem="fFa-jc-1r3" secondAttribute="centerX" id="RTY-xu-j8d"/>
+                            <constraint firstItem="waA-UE-7yw" firstAttribute="top" secondItem="fWu-qH-1Mr" secondAttribute="top" constant="49" id="FGH-zc-Uca"/>
                             <constraint firstItem="fWu-qH-1Mr" firstAttribute="trailing" secondItem="waA-UE-7yw" secondAttribute="trailing" constant="32" id="S8P-VM-Igy"/>
                             <constraint firstItem="fWu-qH-1Mr" firstAttribute="trailing" secondItem="qLD-wc-Zsa" secondAttribute="trailing" constant="32" id="bak-2y-G4x"/>
                             <constraint firstItem="qLD-wc-Zsa" firstAttribute="leading" secondItem="fWu-qH-1Mr" secondAttribute="leading" constant="32" id="dFJ-4P-3DU"/>
+                            <constraint firstItem="qLD-wc-Zsa" firstAttribute="top" secondItem="waA-UE-7yw" secondAttribute="bottom" constant="21" id="fP2-rI-UoX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fWu-qH-1Mr"/>
                     </view>
